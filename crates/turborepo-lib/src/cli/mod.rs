@@ -1275,7 +1275,7 @@ pub async fn run(
             let mut client = WatchClient::new(base, event).await?;
             client.start().await?;
             // Graceful shutdown
-            return Ok(0);
+            return Ok(());
         }
         Command::Prune {
             scope,
