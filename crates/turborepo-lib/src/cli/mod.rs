@@ -1274,8 +1274,8 @@ pub async fn run(
 
             let mut client = WatchClient::new(base, event).await?;
             client.start().await?;
-            // We only exit if we get a signal, so we return a non-zero exit code
-            return Ok(1);
+            // Graceful shutdown
+            return Ok(0);
         }
         Command::Prune {
             scope,
